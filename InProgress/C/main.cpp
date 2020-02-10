@@ -25,12 +25,12 @@ int main(){
    TmpS.pop();
   }
   TmpS.push(N);
-  for(int i=1; i<=N; ++i){
-    while( TmpS.top() != N && Numbers[TmpS.top()]>=Numbers[N-i] ){
+  for(int i=N-1; i>=0; --i){
+    while( TmpS.top() != N && Numbers[TmpS.top()]>=Numbers[i] ){
       TmpS.pop();
     }
-    RightMax[N-i] = TmpS.top();
-    TmpS.push(N-i);
+    RightMax[i] = TmpS.top();
+    TmpS.push(i);
   }
 
   long long Rectangles[N];
