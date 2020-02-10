@@ -1,0 +1,41 @@
+#include <iostream>
+#include <list>
+
+int main(){
+  std::list<int> GoblinsFirst;
+  std::list<int> GoblinsSecond;
+
+  int N;
+  char cmd;
+  int NewGoblin;
+
+  std::cin >> N;
+
+  for(int i=0; i<N; ++i){
+    std::cin >> cmd;
+    switch(cmd){
+      case('-'):{
+      std::cout << Goblins.front() << std::endl;
+      Goblins.pop_front();
+      }
+
+      case('+'):{
+        std::cin >> NewGoblin;
+        GoblinsSecond.push_back(NewGoblin);
+        if(GoblinsSecond.size()>GoblinsFirst.size()){
+          GoblinsFirst.push_back(GoblinsSe)
+        }
+      }
+
+      case('*'):{
+        int QSize = Goblins.size();
+        std::list<int>::iterator pos = Goblins.begin();
+        for(int i=0; i<(QSize+1)/2; ++i){
+          ++pos;
+        }
+        Goblins.insert(pos, NewGoblin);
+      }
+    }
+  }
+  return 0;
+}
