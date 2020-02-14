@@ -35,7 +35,7 @@ int main(){
 
   long long Rectangles[N];
   for(int i=0; i<N; ++i){
-    Rectangles[i] = Numbers[i]*(RightMax[i] - (LeftMax[i] + 1));
+    Rectangles[i] = (long long)Numbers[i]*(RightMax[i] - (LeftMax[i] + 1));
   }
   if(N>0){
     std::cout << *std::max_element(Rectangles, Rectangles + N);

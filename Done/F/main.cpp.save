@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main(){
+  int n,m;
+
+  std::cin >> n;
+  std::vector<int> First;
+  std::vector<std::pair <int, int> > Second;
+  std::vector<int> Ans;
+  First.resize(n);
+  for(int i=0; i<n; ++i){
+    std::cin >> First[i];
+  }
+  std::cin >> m;
+  Ans.resize(0, m);
+  Second.resize(m);
+  for(int i=0; i<m; ++i){
+    std::cin >> Second[i].first;
+    Second[i].second = i;
+  }
+  std::sort(First.begin(), First.end());
+  std::sort(Second.begin(), Second.end());
+
+  int i=0;
+  int j=0;
+  while(i < n && j < m){
+    std::cout << i << " " << j << " " << First[i] << " " << Second[j].first << std::endl;
+    if(First[i] == Second[j].first){
+      std::cout << 
+      ++Ans[Second[j].second];
+      ++j;
+    }else if(First[i] > Second[j].first){
+      ++j;
+    }else{
+      ++i;
+    }
+  }
+
+  for(int k=0; k<m; ++k){
+    std::cout << Ans[k] << " ";
+  }
+  return 0;
+}
