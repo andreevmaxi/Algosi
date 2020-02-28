@@ -7,22 +7,26 @@ int main(){
 
   std::cin >> n >> p >> q;
 
-  std::vector<int> a;
+  std::vector<long long> a;
   a.resize(n);
   for(int i=0; i<n; ++i){
     std::cin >> a[i];
   }
-  int Bashes = 0;
+  long long Bashes = 0;
   int l,r;
   int m;
   std::sort(a.rbegin(), a.rend());
   l=a[0]/p;
-  r=a[0]/q + (a[0]%q && 1);
+  r=a[0]/q;
+  if(a[0]%q > 0)
+    ++r;
   while(l+1<r){
     m=(l+r)/2;
     Bashes = m;
     for(int NowMob = 0; NowMob < n; ++NowMob){
-      Bashes -= std::max(0, ((a[NowMob] - m * q) / (p - q) + (int)(((a[NowMob] - m * q) % (p - q)) && 1) ));
+      if(((a[NowMob] - (long long)m * q) % (p - q)) > 0 && (a[NowMob] - (long long)m * q) > 0)
+        --Bashes;
+      Bashes -= std::max((long long)0, (a[NowMob] - (long long)m * q) / (p - q));
     }
     if(Bashes < 0){
       l = m;
