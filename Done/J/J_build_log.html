@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>J build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>28-02-2020 at 09:32.20</u><br />
+Build ended on: <u>28-02-2020 at 09:32.21</u><p />
+<b>-------------- Build: Debug in J (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+mingw32-g++.exe "C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp" -o bin\Debug\J.exe -mconsole  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC -D_VORONEZH<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:15:8: warning: 'struct SkipList' has pointer data members [-Weffc++]</font><br />
+ struct SkipList{<br />
+        ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:15:8: warning:   but does not override 'SkipList(const SkipList&amp;)' [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:15:8: warning:   or 'operator=(const SkipList&amp;)' [-Weffc++]</font><br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp: In constructor 'SkipList::SkipList(int)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:20:3: warning: 'SkipList::Begin' should be initialized in the member initialization list [-Weffc++]</font><br />
+   SkipList(int n){<br />
+   ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:20:3: warning: 'SkipList::End' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:20:3: warning: 'SkipList::Size' should be initialized in the member initialization list [-Weffc++]</font><br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp: In constructor 'ListNode::ListNode()':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:7:8: warning: 'ListNode::Nexts' should be initialized in the member initialization list [-Weffc++]</font><br />
+ struct ListNode{<br />
+        ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:7:8: warning: 'ListNode::Prevs' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:7:8: warning: 'ListNode::Color' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:7:8: warning: 'ListNode::Price' should be initialized in the member initialization list [-Weffc++]</font><br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:7:8: warning: 'ListNode::OtherSide' should be initialized in the member initialization list [-Weffc++]</font><br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp: In constructor 'SkipList::SkipList(int)':<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:21:17: note: synthesized method 'ListNode::ListNode()' first required here <br />
+     Begin = new ListNode;<br />
+                 ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp: In member function 'ListNode* SkipList::Insert(int, long long int)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:63:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+       while(AfterInsert-&gt;Nexts.size() &lt; i + 1){<br />
+                                             ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp: In member function 'ListNode* SkipList::Delete(ListNode*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:81:49: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     for(int i = 0; i &lt; DeletingSide-&gt;Nexts.size(); ++i){<br />
+                                                 ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:146:57: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+   SkipList Faces(round((double)log(n+2) / (double)log(2)));<br />
+                                                         ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:147:57: warning: conversion to 'int' from 'double' may alter its value [-Wconversion]</font><br />
+   SkipList Backs(round((double)log(n+2) / (double)log(2)));<br />
+                                                         ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\InProgress\J\main.cpp:194:1: warning: stack usage might be unbounded [-Wstack-usage=]</font><br />
+ }<br />
+ ^<br />
+Output size is 1,54 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 0 seconds)</font><br />
+<font color="#0000ff">0 errors, 16 warnings (0 minutes, 0 seconds)</font><br />
+</tt>
+</body>
+</html>

@@ -2,7 +2,8 @@
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="main.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="1471" topLine="0" />
-		<BrowseMarks positions="21,203,313,359,528,562,657,753,853,1389,1677" />
+		<Cursor position="1495" topLine="40" />
+		<BrowseMarks positions="250,341,397,1389,1455,1994,2001,2342,2494,2542,2891,4172,4392,4399,4580,4582,4802,5663" />
+		<Book_Marks positions="" />
 	</File>
 </BrowseTracker_layout_file>

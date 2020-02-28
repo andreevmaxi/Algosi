@@ -1,25 +1,36 @@
 #include <iostream>
+#include <algorithm>
+#include <vector>
 
 int main(){
   int n,p,q;
 
   std::cin >> n >> p >> q;
 
-  int a[n];
+  std::vector<int> a;
+  a.resize(n);
   for(int i=0; i<n; ++i){
     std::cin >> a[i];
   }
-  int NowHp[n];
-  int NowMax=0;
+  int Bashes = 0;
   int l,r;
-
-  for(int i=0; i<n; ++i){
-    NowHp[i]=a[i];
+  int m;
+  std::sort(a.rbegin(), a.rend());
+  l=a[0]/p + (a[0]%p & 1);
+  r=a[0]/q + (a[0]%q & 1);
+  while(l+1<r){
+    std::cerr << l << " " << r << std::endl;
+    m=(l+r)/2;
+    Bashes = m;
+    for(int NowMob = 0; NowMob < n; ++NowMob){
+      Bashes -= std::max(0, ((a[NowMob] - m * q) / (p - q) + ((a[NowMob] - m * q) % (p - q)) ));
+    }
+    if(Bashes < 0){
+      l = m;
+    } else {
+      r = m;
+    }
   }
-  std::sort(NowHp.rbegin(), NowHp.end());
-  l=NowHp[0]/p + (NowHp[0]%p & 1);
-  r=NowHp[0]/q + (NowHp[0]%q & 1);
-  m=(l+r)/2;
-  
+  std::cout << std::max(l,r);
   return 0;
 }
