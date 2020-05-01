@@ -1,0 +1,53 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+
+int main()
+{
+  unsigned long long m,k;
+  unsigned long long n;
+  unsigned long long tmp1;
+  unsigned long long tmp2;
+  cin >> n >> m >> k;
+  string ques;
+  multiset <unsigned long long> base[m + 2];
+  for(int i = 0; i < k; ++i){
+    cin >> ques;
+
+    cin >> tmp1;
+
+    if(ques == "ADD"){
+      cin >> tmp2;
+      base[tmp1].insert(tmp2);
+    } else if(ques == "DELETE") {
+      cin >> tmp2;
+      base[tmp1].erase(base[tmp1].find(tmp2));
+    } else if(ques == "CLEAR") {
+      base[tmp1].erase(base[tmp1].begin(), base[tmp1].end());
+    } else if(ques == "LISTSET") {
+      if(base[tmp1].empty()){
+        cout << -1;
+      } else {
+        for(int i = 0; i < base[tmp1].size(); ++i){
+          cout << *(base[tmp1].begin() + i) << " ";
+        }
+      }
+      cout << endl;
+    } else if(ques == "LISTSETSOF") {
+      bool Found = 0;
+      for(int i = 0; i <= m; ++i){
+        if(base[i].begin() != base[i].end() && *(base[i].find(tmp1)) == tmp1){
+          cout << i << " ";
+          Found = 1;
+        }
+      }
+      if(!Found){
+        cout << -1;
+      }
+      cout << endl;
+    }
+  }
+  return 0;
+}

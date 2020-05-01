@@ -1,0 +1,61 @@
+#include <iostream>
+#include <algorithm>
+#include <fstream>
+
+std::pair<int, int> table[100000][16 + 1];
+std::pair<int, int> Arr[100000];
+
+std::pair<int, int> Max(std::pair<int, int> i1, std::pair<int, int> i2)
+{
+	if (i1.first > i2.first)
+		return i1;
+  else
+    if(i1.first == i2.first && i2.second > ) 
+      
+    return i2;
+}
+
+int main()
+{
+	FILE* R;
+	R = fopen("index-max.in", "r");
+	int n, q;
+	fscanf(R, "%d", &n);
+	for (int i = 0; i < n; ++i)
+	{
+		fscanf(R, "%d ", &Arr[i].first);
+		Arr[i].second = i + 1;
+	}
+
+	for (int i = 0; i < n; ++i)
+		table[i][0] = Arr[i];
+
+	for (int j = 1; j <= 16; ++j)
+		for (int i = 0; i <= n - (1 << j); ++i)
+			table[i][j] = Max(table[i][j - 1], table[i + (1 << (j - 1))][j - 1]);
+
+
+	FILE* W;
+	fscanf(R, "%d", &q);
+	W = fopen("index-max.out", "w");
+	int tmp1, tmp2;
+	for (int i = 0; i < q; ++i)
+	{
+		fscanf(R, "%d %d", &tmp1, &tmp2);
+		tmp1--;
+		tmp2--;
+		std::pair<int, int> answer;
+		answer.first = -1;
+		for (int j = 16; j >= 0; --j)
+			if (tmp1 + (1 << j) - 1 <= tmp2)
+			{
+				answer = Max(answer, table[tmp1][j]);
+				tmp1 += 1 << j;
+			}
+		fprintf(W, "%d\n", answer.first);
+	}
+	fclose(R);
+	fclose(W);
+
+	return 0;
+}

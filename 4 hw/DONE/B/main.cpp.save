@@ -1,0 +1,57 @@
+#include <vector>
+#include <iostream>
+#include <iomanip>
+
+struct Fen {
+
+	std::vector< vector < vector<int> > > s;
+
+	Fen(int n)
+	{
+    ++n;
+		s = vector<vector<vector<int>>>(n, vector<vector<int>>(n, vector<int>(n, 0)));
+		return;
+	}
+
+	int PrSum(int i, int j, int k) const {
+		int result = 0;
+		for (++i; i > 0; i -= i & -i)
+      for (++j; j > 0; j -= j & -j)
+        for (++k; k > 0; k -= k & -k)
+          result += s[i][j][k];
+		return result;
+	}
+
+	int RgSum(int li, int lj, int lk, int ri, int rj, int rk) const {
+    if (li == 0 && lj == 0 && lk == 0)
+      return PrSum(ri, rj, rk);
+    else
+      return PrSum(ri, rj, rk) + PrSum(li, rj, rk) + PrSum(ri, lj, rk) + PrSum(ri, rj, lk) + 3 * PrSum(li, lj, lk);
+	}
+
+	void Up(int i, int j, int k, int add) {
+		for (++i; i < s.size(); i += i & -i)
+      for (++j; j < s.size(); j+= j & -j)
+        for (++k; k < s.size(); k+= k & -k)
+          s[i][j][k] += add;
+
+    return;
+	}
+};
+
+int main()
+{
+  std::cin.tie(nullptr);
+  std::ios_base::sync_with_stdio(false);
+
+  int n;
+  std::cin >> n;
+	Fen Sky(n);
+	int cmd = 0;
+	std::cin >> cmd;
+	while(cmd != 3){
+    if(cmd == 2) {
+      
+    }
+	}
+}

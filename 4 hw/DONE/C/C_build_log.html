@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>C build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>26-04-2020 at 19:05.28</u><br />
+Build ended on: <u>26-04-2020 at 19:05.29</u><p />
+<b>-------------- Build: Debug in C (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+mingw32-g++.exe "C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp" -o bin\Debug\C.exe -mconsole  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC -D_VORONEZH<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp: In constructor 'Fen::Fen(long long int)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:10:2: warning: 'Fen::s' should be initialized in the member initialization list [-Weffc++]</font><br />
+  Fen(long long n)<br />
+  ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:12:34: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+   s = std::vector&lt;long long&gt;(n, 0);<br />
+                                  ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp: In member function 'long long int Fen::PrSum(long long int) const':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:19:9: warning: statement has no effect [-Wunused-value]</font><br />
+   for (i; i &gt;= 0; i = (i &amp; (i + 1)) - 1) {<br />
+         ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:20:17: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+    result += s[i];<br />
+                 ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp: In member function 'void Fen::Up(long long int, long long int)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:33:9: warning: statement has no effect [-Wunused-value]</font><br />
+   for (i; i &lt; s.size(); i = (i | (i + 1)))<br />
+         ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:34:7: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+    s[i] += add;<br />
+       ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:55:12: warning: unused variable 's' [-Wunused-variable]</font><br />
+  long long s[n];<br />
+            ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\4 hw\UNDONE\C\main.cpp:80:1: warning: stack usage might be unbounded [-Wstack-usage=]</font><br />
+ }<br />
+ ^<br />
+Output size is 1,62 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 0 seconds)</font><br />
+<font color="#0000ff">0 errors, 8 warnings (0 minutes, 0 seconds)</font><br />
+</tt>
+</body>
+</html>

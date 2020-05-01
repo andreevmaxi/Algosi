@@ -1,0 +1,235 @@
+#include <iostream>
+#include <vector>
+#include <ctime>
+using namespace std;
+
+const int M = 2;
+
+struct B_tree{
+  struct Node{
+    bool leaf;
+    int n;
+    vector <int> k;
+    vector <node*> pointers;
+  };
+
+  Node* root;
+
+  //int min_power;
+  //tree_struct* tree_base;
+  /*
+  pair<int, node*> give_answer(int index, node* answer_node)
+  {
+      return make_pair(index, answer_node);
+  }
+  */
+  void split(node* x, int i)
+  {
+    node* z = new node;
+    z->pointers.reserve(2 * min_power);
+    z->keys.reserve(2 * min_power - 1);
+    node* y = x->pointers[i];
+    z->leaf = y->leaf;
+    z->n = min_power - 1;
+
+    for (int i = 0; i < min_power - 1; i++)
+    {
+      z->keys[i] = child_node2->keys[i + min_power];
+    }
+
+    if (!(child_node2->is_leaf))
+    {
+      for (int i = 0; i < min_power; i++)
+      {
+        z->pointers[i] = child_node2->pointers[i + min_power];
+      }
+    }
+
+    child_node2->n = min_power - 1;
+
+    for (int i = x->n; i > index; i--)
+    {
+        x->pointers[i + 1] = x->pointers[i];
+    }
+
+    x->pointers[index + 1] = z;
+
+    for (int i = x->n - 1; i > index - 1; i--)
+    {
+        x->keys[i + 1] = x->keys[i];
+    }
+
+    x->keys[index] = child_node2->keys[min_power - 1];
+    x->n++;
+  }
+
+  void insert(tree_struct* tree, int key){
+    if (tree->root->n == ((2 * min_power) - 1)){
+      node* new_node = new node;
+      new_node->is_leaf = false;
+      new_node->n = 0;
+      new_node->pointers.reserve(2 * min_power);
+      new_node->keys.reserve(2 * min_power - 1);
+      new_node->pointers[0] = tree->root;
+      tree->root = new_node;
+      split(tree->root, 0);
+      insert_nonfull(tree->root, key);
+    }
+    else insert_nonfull(tree->root, key);
+  }
+
+  void insert_nonfull(node* parent_node, int key){
+    int i = parent_node->n - 1;
+    if (parent_node->is_leaf){
+      while (i >= 0 && key < parent_node->keys[i]){
+        parent_node->keys[i + 1] = parent_node->keys[i];
+        --i;
+      }
+      parent_node->keys[i + 1] = key;
+      parent_node->n++;
+    }
+      else
+      {
+          while (i >= 0 && key < parent_node->keys[i])
+          {
+              --i;
+          }
+          ++i;
+          if (parent_node->pointers[i]->n == ((2 * min_power) - 1))
+          {
+              split(parent_node, i);
+              if (key >= parent_node->keys[i])
+              {
+                  ++i;
+              }
+          }
+          insert_nonfull(parent_node->pointers[i], key);
+      }
+
+  }
+
+  b_tree(int min_power_value)
+  {
+      tree_base = new tree_struct;
+      min_power = min_power_value;
+      tree_base->root = new node;
+      tree_base->root->is_leaf = true;
+      tree_base->root->n = 0;
+      tree_base->root->keys.reserve(2 * min_power - 1);
+      tree_base->root->pointers.reserve(2 * min_power );
+  }
+
+  pair <int, node*> search(node* parent_node, int key)
+  {
+      int i = 0;
+      while (i < parent_node->n && key > parent_node->keys[i])
+      {
+          i++;
+      }
+      if (i < parent_node->n && key == parent_node->keys[i])
+      {
+          return give_answer(i, parent_node);
+      }
+      else if (parent_node->is_leaf)
+      {
+          return give_answer(-1, nullptr);
+      }
+      else
+      {
+          return search(parent_node->pointers[i], key);
+      }
+  }
+
+  int custom_search(node* parent_node, int key)
+  {
+      int i = 0;
+      while (i < parent_node->n && key > parent_node->keys[i])
+      {
+          i++;
+      }
+
+      if (i < parent_node->n && key <= parent_node->keys[i] && !parent_node->is_leaf)
+      {
+          int ans = custom_search(parent_node->pointers[i], key);
+          if (ans == -1) return parent_node->keys[i];
+          return ans;
+      }
+      if (parent_node->is_leaf)
+      {
+          if (i < parent_node->n && key <= parent_node->keys[i]) return parent_node->keys[i];
+          return -1;
+      }
+      else
+      {
+          return custom_search(parent_node->pointers[i], key);
+      }
+  }
+
+  bool contains(int key)
+  {
+      auto answer = search(tree_base->root, key);
+      if (answer.first == -1) return false;
+      return true;
+  }
+
+  void add(int i)
+  {
+      insert(tree_base, i);
+  }
+
+  int next(int i)
+  {
+      return custom_search(tree_base->root, i);
+  }
+
+  void dump(node* parent_node)
+  {
+      for (int i = 0; i < parent_node->n; i++)
+      {
+          cout << parent_node->keys[i] << ' ';
+      }
+      for (int i = 0; i < parent_node->n + 1; i++)
+      {
+          if (parent_node->is_leaf) break;
+          cout << '\n' << "leaf " << i << '\n';
+          dump(parent_node->pointers[i]);
+      }
+  }
+
+};
+
+
+int main()
+{
+    int N;
+    b_tree tree(50);
+    cin >> N;
+    char mode = 0;
+    char prev = 0;
+    int prev_answer = 0;
+    int arg = 0;
+    int answer = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        cin >> mode >> arg;
+        if (mode == '+')
+        {
+            if (prev == '?')
+
+            {
+                arg = (arg + prev_answer) % 1000000000;
+                if(!tree.contains(arg)) tree.add(arg);
+            }
+            else if(!tree.contains(arg)) tree.add(arg);
+
+        }
+        if (mode == '?')
+        {
+            answer = tree.next(arg);
+            cout << answer << '\n';
+            prev_answer = answer;
+        }
+        prev = mode;
+    }
+}

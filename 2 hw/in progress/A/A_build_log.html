@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>A build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>30-03-2020 at 19:25.31</u><br />
+Build ended on: <u>30-03-2020 at 19:25.32</u><p />
+<b>-------------- Build: Debug in A (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+mingw32-g++.exe "C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c" -o bin\Debug\A.exe -mconsole  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC -D_VORONEZH<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool ACaseRead(int*, FILE*, int**, int*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:4:6: warning: no previous declaration for 'bool ACaseRead(int*, FILE*, int**, int*)' [-Wmissing-declarations]</font><br />
+ bool ACaseRead(int* BSize, FILE* f, int** buffer, int* MinPtr){<br />
+      ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool ACaseProcessing(int*, int, long long unsigned int*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:33:6: warning: no previous declaration for 'bool ACaseProcessing(int*, int, long long unsigned int*)' [-Wmissing-declarations]</font><br />
+ bool ACaseProcessing(int* buffer, int BSize, unsigned long long* ans){<br />
+      ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool ACaseOutput(FILE*, int*, int, int, long long unsigned int)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:41:6: warning: no previous declaration for 'bool ACaseOutput(FILE*, int*, int, int, long long unsigned int)' [-Wmissing-declarations]</font><br />
+ bool ACaseOutput(FILE* f, int* buffer, int MinPtr, int BSize, unsigned long long ans){<br />
+      ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:45:26: warning: unknown conversion type character 'l' in format [-Wformat=]</font><br />
+   fprintf(f, "%llu ", ans);<br />
+                          ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:45:26: warning: too many arguments for format [-Wformat-extra-args]</font><br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool BCaseRead(int*, char**, FILE*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:53:6: warning: no previous declaration for 'bool BCaseRead(int*, char**, FILE*)' [-Wmissing-declarations]</font><br />
+ bool BCaseRead(int* BSize, char** buffer, FILE* f){<br />
+      ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool BCaseProcessing(int, char*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:88:6: warning: no previous declaration for 'bool BCaseProcessing(int, char*)' [-Wmissing-declarations]</font><br />
+ bool BCaseProcessing(int BSize, char* buffer){<br />
+      ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:91:21: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+       *(buffer + i) += 32;<br />
+                     ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool BCaseOutput(FILE*, char*, int)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:98:6: warning: no previous declaration for 'bool BCaseOutput(FILE*, char*, int)' [-Wmissing-declarations]</font><br />
+ bool BCaseOutput(FILE* f, char* buffer, int bSize){<br />
+      ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'void Error(int)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:109:6: warning: no previous declaration for 'void Error(int)' [-Wmissing-declarations]</font><br />
+ void Error(int err){<br />
+      ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:110:9: warning: switch missing default case [-Wswitch-default]</font><br />
+   switch(err){<br />
+         ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool ACASE(FILE*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:131:6: warning: no previous declaration for 'bool ACASE(FILE*)' [-Wmissing-declarations]</font><br />
+ bool ACASE(FILE* f){<br />
+      ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c: In function 'bool BCASE(FILE*)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\2 hw\done\files\main.c:157:6: warning: no previous declaration for 'bool BCASE(FILE*)' [-Wmissing-declarations]</font><br />
+ bool BCASE(FILE* f){<br />
+      ^<br />
+Output size is 35,99 KB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 0 seconds)</font><br />
+<font color="#0000ff">0 errors, 13 warnings (0 minutes, 0 seconds)</font><br />
+</tt>
+</body>
+</html>
