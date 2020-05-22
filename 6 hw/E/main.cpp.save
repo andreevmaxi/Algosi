@@ -1,0 +1,26 @@
+#include <iostream>
+
+const long long inf = (1 << 32) - 1;
+
+int main()
+{
+  long long N, M, K, S, F;
+  std::cin >> N >> M >> K >> S >> F;
+  long long Map[M][3];
+  for(int i=0; i<M; ++i){
+    std::cin >> Map[i][0] >> Map[i][1] >> Map[i][2];
+  }
+  long long dp[N][K+1];
+  for(int i=0; i<N; ++i){
+    for(int j=0; j<=K; ++j){
+      dp[i][j] = inf;
+    }
+  }
+  dp[S][0] = 0;
+  for(int i=0; i<K; ++i){
+    for(int j=0; j<M; ++j){
+      if(dp[Map[i][[])
+    }
+  }
+  return 0;
+}

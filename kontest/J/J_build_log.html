@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>J build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>22-05-2020 at 18:41.37</u><br />
+Build ended on: <u>22-05-2020 at 18:41.40</u><p />
+<b>-------------- Build: Debug in J (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+mingw32-g++.exe "C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp" -o bin\Debug\J.exe -mconsole  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC -D_VORONEZH<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:8:35: warning: integer overflow in expression [-Woverflow]</font><br />
+ const long long inf = (1 &lt;&lt; 31) - 1;<br />
+                                   ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:18:56: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+   std::vector &lt;std::vector&lt;std::pair&lt;int, int&gt;&gt;&gt; path(N);<br />
+                                                        ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:22:11: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     path[i].reserve(1000);<br />
+           ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:23:11: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     path[i].push_back(std::make_pair(0, 0));<br />
+           ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:31:16: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     ++path[tmp1-1][0].first;<br />
+                ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:32:16: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     ++path[tmp2-1][0].first;<br />
+                ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:33:14: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     path[tmp1-1].push_back(std::make_pair(tmp2-1, tmp3));<br />
+              ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:34:14: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     path[tmp2-1].push_back(std::make_pair(tmp1-1, tmp3));<br />
+              ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:52:43: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+       for (long long i=1; i&lt;=path[minindex][0].first; ++i){<br />
+                                           ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:53:36: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+         temp = mini + path[minindex][i].second;<br />
+                                    ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:53:39: warning: conversion to 'std::vector&lt;std::pair&lt;int, int&gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+         temp = mini + path[minindex][i].second;<br />
+                                       ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:54:35: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+         if (temp &lt; d[path[minindex][i].first]){<br />
+                                   ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:54:38: warning: conversion to 'std::vector&lt;std::pair&lt;int, int&gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+         if (temp &lt; d[path[minindex][i].first]){<br />
+                                      ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:55:26: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;int, int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+           d[path[minindex][i].first] = temp;<br />
+                          ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:55:29: warning: conversion to 'std::vector&lt;std::pair&lt;int, int&gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+           d[path[minindex][i].first] = temp;<br />
+                             ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:68:1: warning: stack usage might be unbounded [-Wstack-usage=]</font><br />
+ }<br />
+ ^<br />
+Output size is 1,57 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 2 seconds)</font><br />
+<font color="#0000ff">0 errors, 16 warnings (0 minutes, 2 seconds)</font><br />
+</tt>
+</body>
+</html>

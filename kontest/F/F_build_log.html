@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>F build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>22-05-2020 at 17:24.27</u><br />
+Build ended on: <u>22-05-2020 at 17:24.28</u><p />
+<b>-------------- Build: Debug in F (compiler: GNU GCC Compiler - Strict + Fast (SINGLE FILES ONLY))---------------</b><br />
+mingw32-g++.exe "C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp" -o bin\Debug\F.exe -mconsole  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC -D_VORONEZH<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:8:35: warning: integer overflow in expression [-Woverflow]</font><br />
+ const long long inf = (1 &lt;&lt; 31) - 1;<br />
+                                   ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp: In function 'void BFS(std::vector&lt;std::vector&lt;std::pair&lt;long long int, long long int&gt; &gt; &gt;&amp;, std::vector&lt;long long int&gt;&amp;)':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:10:6: warning: no previous declaration for 'void BFS(std::vector&lt;std::vector&lt;std::pair&lt;long long int, long long int&gt; &gt; &gt;&amp;, std::vector&lt;long long int&gt;&amp;)' [-Wmissing-declarations]</font><br />
+ void BFS(std::vector &lt;std::vector &lt;std::pair&lt;long long, long long&gt;&gt;&gt; &amp;edges, std::vector &lt;long long&gt; &amp;d)<br />
+      ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:21:30: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+       if (d[edges[v][i].first] &gt; d[v] + edges[v][i].second)<br />
+                              ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:23:28: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+         d[edges[v][i].first] = d[v] + edges[v][i].second;<br />
+                            ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:26:41: warning: conversion to 'std::deque&lt;int&gt;::value_type {aka int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+           q.push_front(edges[v][i].first);<br />
+                                         ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:30:40: warning: conversion to 'std::deque&lt;int&gt;::value_type {aka int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+           q.push_back(edges[v][i].first);<br />
+                                        ^<br />
+C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:47:13: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+   d.resize(N);<br />
+             ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:48:17: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;long long int, long long int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+   edges.resize(N);<br />
+                 ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:55:15: warning: conversion to 'std::vector&lt;std::vector&lt;std::pair&lt;long long int, long long int&gt; &gt; &gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     edges[tmp1-1].push_back(std::make_pair(tmp2-1, tmp3));<br />
+               ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:59:9: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+   if(d[N-1] == inf){<br />
+         ^<br />
+<font color="#0000ff">C:\Users\MI Pro-15\Documents\GitHub\Algosi\kontest\J\main.cpp:62:16: warning: conversion to 'std::vector&lt;long long int&gt;::size_type {aka unsigned int}' from 'long long int' may alter its value [-Wconversion]</font><br />
+     ofst &lt;&lt; d[N-1];<br />
+                ^<br />
+Output size is 1,67 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 1 seconds)</font><br />
+<font color="#0000ff">0 errors, 11 warnings (0 minutes, 1 seconds)</font><br />
+</tt>
+</body>
+</html>

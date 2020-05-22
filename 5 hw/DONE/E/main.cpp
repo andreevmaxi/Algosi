@@ -1,0 +1,74 @@
+#include <iostream>
+#include <stack>
+//#include <bitset>
+
+const int Inf = 2147483647; // biggest int
+
+int main()
+{
+  int n;
+  std::cin >> n;
+  int kd2s[1 << n][n]; // karti dengi 2 stvola
+  int karta[n][n];
+  for(int i=0; i<n; ++i){
+    for(int j=0; j<n; ++j){
+      std::cin >> karta[i][j];
+    }
+  }
+
+  for(int mask=0; mask<(1 << n); ++mask){
+    for(int i=0; i<n; ++i){
+      kd2s[mask][i] = Inf;
+      if(!( mask - (1 << i)) && (mask & (1 << i))){
+        kd2s[mask][i] = 0;
+      }
+    }
+  }
+  for(int mask=0; mask<(1 << n); ++mask){
+    for(int i=0; i<n; ++i){
+      if((mask >> i) & 1){
+        int old_mask = mask ^ (1 << i);
+
+        for(int j=0; j<n; ++j){
+          if(i!=j && ((mask >> j) & 1)){
+            kd2s[mask][i] = std::min(kd2s[mask][i], kd2s[old_mask][j] + karta[j][i]);
+          }
+        }
+      }
+    }
+  }
+
+  int EndMap = (1 << n) - 1;
+
+  int ans = kd2s[EndMap][0];
+  int AnsI = 0;
+  for(int i=1; i<n; ++i){
+    if(ans > kd2s[EndMap][i]){
+      ans = kd2s[EndMap][i];
+      AnsI = i;
+    }
+  }
+
+  std::cout << ans << std::endl;
+
+  std::stack<int> trace;
+  trace.push(AnsI + 1);
+  while(EndMap != (1 << AnsI)){
+    int old_mask = EndMap ^ (1 << AnsI);
+    int NewI = AnsI;
+    for(int j=0; j<n; ++j){
+      if(AnsI!=j && ((EndMap >> j) & 1) && (kd2s[EndMap][AnsI] == kd2s[old_mask][j] + karta[j][AnsI])){
+        NewI = j;
+      }
+    }
+    EndMap = old_mask;
+    trace.push(NewI + 1);
+    AnsI = NewI;
+    //std::cerr << std::bitset<20>(EndMap) << " " << AnsI << std::endl;
+  }
+  while(!trace.empty()){
+    std::cout << trace.top() << " ";
+    trace.pop();
+  }
+  return 0;
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+
+int main()
+{
+  int n;
+  std::cin >> n;
+  long long ans = 0;
+  vector<int> a(n);
+  bool p[n];
+  for(int i=0;i<n;++i){
+    std::cin >> a[i];
+  }
+  std::sort(a.begin(), a.end());
+  ans += a[1] - a[0];
+  p[0] = 1;
+  p[1] = 1;
+  for(int i=2;i<n-1;++i){
+    if(p[i] != 1){
+      int Sv;
+      if(a[i]-a[i-1] < a[i+1]-a[i]){
+        Sv = i-1;
+      }
+      ans += std::abs(a[i]-a[Sv]);
+      p[Sv]=1;
+      p[i]=1;
+    }
+  }
+  if(p[n-1] != 1){
+    ans+=a[n-1]-a[n-2];
+  }
+  std::cout << an
+  return 0;
+}

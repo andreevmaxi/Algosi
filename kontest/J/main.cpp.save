@@ -1,0 +1,70 @@
+#include <fstream>
+#include <iostream>
+#include <algorithm>
+#include <deque>
+
+const long long inf = (1 << 31) - 1;
+
+std::vector <std::vector <std::pair<int, int>>> edges;
+std::vector <int> d;
+
+void BFS()
+{
+  std::deque<int> q;
+  q.push_back(0);
+  d[0] = 0;
+  while (!q.empty())
+  {
+    int v = q.front();
+    q.pop_front();
+    for (int i = 0; i < (int)edges[v].size(); ++i)
+    {
+      if (d[edges[v][i].first] > d[v] + edges[v][i].second)
+      {
+        d[edges[v][i].first] = d[v] + edges[v][i].second;
+        if (edges[v][i].second == 1)
+        {
+          q.push_front(edges[v][i].first);
+        }
+        else
+        {
+          q.push_back(edges[v][i].first);
+        }
+      }
+    }
+  }
+}
+
+int main()
+{
+  std::ifstream ifst;
+  ifst.open("kefir.in");
+  std::ofstream ofst("kefir.out");
+  int N, M;
+
+  if(!ifst) {
+    std::cout
+  }
+  ifst >> N >> M;
+  std::cout << N;
+  d.resize(N);
+  edges.resize(N);
+  for(int i=0; i<N; ++i){
+    d[i] = inf;
+  }
+  int tmp1, tmp2, tmp3;
+  for(int i=0; i<M; ++i){
+    ifst >> tmp1 >> tmp2 >> tmp3;
+    edges[tmp1-1].push_back(std::make_pair(tmp2-1, tmp3));
+  }
+
+  BFS();
+  if(d[N-1] == inf){
+    ofst << -1;
+  } else {
+    ofst << d[N-1];
+  }
+  ifst.close();
+  ofst.close();
+  return 0;
+}
